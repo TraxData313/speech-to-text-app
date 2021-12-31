@@ -1,5 +1,7 @@
-# speech-to-text-app
-Simple sppech to text Flask app for Windows
+# Speech to text app
+Simple speech to text Flask app for Windows
+- Free
+- Simple to install and use
 
 # Install steps
 - **Install Python 3.x**: [install python](https://www.python.org/downloads/)
