@@ -3,6 +3,8 @@ Simple speech to text Flask app for Windows
 - Free
 - Simple to install and use
 - Based on the free Google API as provided by [SpeechRecognition](https://pypi.org/project/SpeechRecognition/3.1.2/) library
+- English and Bulgarian support
+- Tested with wav files, but may support other formats
 
 # Install steps
 - **Install Python 3.x**: [install python](https://www.python.org/downloads/)
