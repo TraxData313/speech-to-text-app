@@ -16,3 +16,13 @@ Simple speech to text Flask app for Windows
 - **Speech-to-text**: Follow the instructions on the GUI to turn your wav file to text
 ![image](https://user-images.githubusercontent.com/45358654/147816362-411dc470-b2da-47d2-9d54-61a3def474db.png)
 - **Stop the app**: When done using the app, close the command promt window that runs the command `flask run`
+
+<p><em>Disclaimer:</em></p>
+<blockquote>
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+</blockquote>
