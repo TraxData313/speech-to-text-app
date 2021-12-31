@@ -3,10 +3,49 @@
 
     <div class="container">
         <h1>Home page</h1>
-        <h5>Nothing here yet...</h5>
+        - Place your file in ./data and input its name (max 60 min) <br>
+        - It will show in the list of available files below <br>
+        - Available files: {{available_files | safe}} <br>
+        - If you see your file in the list, proceed to fill up the form <br>
+        <br>
 
-    </br><hr></br>
+        <h3>Form</h3>
+        <small>
+        <form method="POST" action="/">
 
+            <b style="color:black">Audio file name to convert to text:</b>
+            <input type="text" name="mycheckbox">
+            <br>
+            <b style="color:black">Audio language:</b>
+            <select name="mycheckbox">
+                <option value="en-US">en-US</option>
+                <option value="bg">bg</option>
+                </select>
+            <br/>
+            <b style="color:black">Adjust noice (use on noicy videos):</b>
+            <select name="mycheckbox">
+                <option value="0">NO</option>
+                <option value="1">YES</option>
+                </select>
+            <br/>
+            <b style="color:black">Show all results:</b>
+            <select name="mycheckbox">
+                <option value="0">NO</option>
+                <option value="1">YES</option>
+                </select>
+            <br/>
+
+
+            <input type="submit" value="Submit">
+        </form>
+        </small>
+
+        <!--Form debug data: {{form_responce | safe}} <br>-->
+
+        <br><hr><br>
+
+        <h5>Responce</h5>
+        {{txt_from_speech | safe}} <br>
         </div>
 
 {% endblock %}

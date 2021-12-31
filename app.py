@@ -5,6 +5,7 @@ import logging, traceback
 from logging.handlers import RotatingFileHandler
 import time, atexit
 import os
+import speech_recognition as sr
 
 app = Flask(__name__)
 
@@ -38,7 +39,19 @@ app.some_param = None
 ###################################
 # FUNCTIONS:
 ###################################
-app.some_param = None
+def speech_to_text(file_name, adjust_for_noice=False, show_all=False, language="en-US"):
+    file_name = f'data/{file_name}'
+    if os.path.exists(file_name):
+        r = sr.Recognizer()
+        data = sr.AudioFile(file_name)
+        with data as source:
+            if adjust_for_noice:
+                r.adjust_for_ambient_noise(source)
+            audio = r.record(source)
+        responce = r.recognize_google(audio, show_all=show_all, language=language)
+    else:
+        responce = f'<b style="color:red">ERROR</b>: File [{file_name}] does not exist! Make sure it is in the available files list!'
+    return responce
 ###################################
 # END FUNCTIONS
 ###################################
@@ -48,10 +61,27 @@ app.some_param = None
 @app.route('/', methods=['GET', 'POST'])
 def home():
     title = 'STT: Home'
-
+    form_responce = 'none'
+    txt_from_speech = 'the speech as text will be shown here'
+    available_files = os.listdir("data")
+    # Form:
+    if request.method == 'POST':
+        try:
+            boxes = request.form.getlist('mycheckbox')
+            form_responce = boxes
+            file_name = boxes[0]
+            language = boxes[1]
+            adjust_for_noice = bool(int(boxes[2]))
+            show_all = bool(int(boxes[3]))
+            txt_from_speech = speech_to_text(file_name, adjust_for_noice, show_all, language)
+        except Exception as e:
+            txt_from_speech = f'<b style="color:red">ERROR</b>: [{e}]'
     return render_template(
         'index.html', 
-        title=title
+        title=title,
+        form_responce=form_responce,
+        available_files=available_files,
+        txt_from_speech=txt_from_speech
         )
 
 
