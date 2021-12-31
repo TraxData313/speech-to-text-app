@@ -2,7 +2,7 @@
 Simple speech to text Flask app for Windows
 - Free
 - Simple to install and use
-- Based on the [Google WEB API](https://pypi.org/project/SpeechRecognition/3.1.2/)
+- Based on the free Google API as provided by [SpeechRecognition](https://pypi.org/project/SpeechRecognition/3.1.2/) library
 
 # Install steps
 - **Install Python 3.x**: [install python](https://www.python.org/downloads/)
