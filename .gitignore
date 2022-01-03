@@ -1,3 +1,4 @@
 _*
 data/*
 logs/*.log
+google_api_key/*.json
